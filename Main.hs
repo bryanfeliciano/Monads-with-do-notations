@@ -3,7 +3,8 @@ module Main where
 import Lib
 
 main :: IO()
-main = undefined
+main = do
+    putStrLn "everything looks good! "
 
 readCandidate :: IO Candidate
 readCandidate = do
@@ -28,3 +29,4 @@ assessCandidateIO = do
                      then "passed"
                      else "failed"
      return statement
+
