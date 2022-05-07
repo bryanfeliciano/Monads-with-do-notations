@@ -10,6 +10,14 @@ data Candidate = Candidate
                           , cultureFit :: Grade
                           , education :: Degree } deriving Show
 
+testCandidate :: Candidate
+testCandidate = Candidate
+                           { candidateId = 1
+                           , codeReview = A
+                           , cultureFit = A
+                           , education = PhD }
+
+
 viable :: Candidate -> Bool
 viable candidate = all (== True) tests
     where 
@@ -19,3 +27,12 @@ viable candidate = all (== True) tests
         tests = [passedCoding
                 ,passedCultureFit
                 ,educationMin]
+
+readInt :: IO Int
+readInt = getLine >>= (return . read)
+
+readGrade :: IO Grade
+readGrade = getLine >>= (return . read)
+
+readDegree :: IO Degree
+readDegree = getLine >>= (return . read)
